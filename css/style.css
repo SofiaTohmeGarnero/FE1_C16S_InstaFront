@@ -1,0 +1,250 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.bigConteiner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.7fr 3fr 3fr 3fr 0.5fr;
+    gap: 5px 5px;
+    grid-template-areas:
+        "header header header header header header header header header header header header"
+        "main main main main main main main main aside aside aside aside"
+        "main main main main main main main main aside aside aside aside"
+        "main main main main main main main main aside aside aside aside"
+        "footer footer footer footer footer footer footer footer footer footer footer footer";
+    background: #FAFAFA;
+}
+
+/*header*/
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        ". h1 h1 . h2 h2 h2 h2 . . . h3  ";
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    grid-area: h1;
+    place-self: center start ;
+}
+.buscador{
+    grid-area: h2;
+    place-self: center stretch;
+}
+.buscador input{
+    background: #FAFAFA;
+    border: 0.3px solid #222222;
+    border-radius: 5px;
+    padding: 3%;
+    width: 100%;
+}
+.perfil{
+    grid-area: h3;
+    place-self: center start;
+}
+
+/*main*/
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 2fr;
+    grid-template-areas: 
+        ". histories histories histories histories histories histories ."
+        ". card card card card card card ."
+        ". card card card card card card .";
+    font-family: 'Inter', sans-serif;
+    margin: 10vh 0 15% 0 ;
+}
+
+
+.histories{
+    grid-area: histories;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 0.4px solid rgba(34, 34, 34, 0.5);
+    border-radius: 5px;  
+    padding: 3% 5%;
+    margin-bottom: 50px;
+}
+
+.histories img{
+    place-self: center;
+
+}
+
+.card{
+    grid-area: card;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas: 
+    "top top top top top top"
+    "cont cont cont cont cont cont";
+    border: 0.4px solid rgba(34, 34, 34, 0.5);
+    border-radius: 5px;  
+    
+}
+
+.cardTop{
+    grid-area: top;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-bottom: 0.4px solid rgba(34, 34, 34, 0.5);  
+}
+
+.cardTop img{
+    place-self: center;
+    width: 50px;
+    height: 50px;
+}
+
+.cardTop h2{
+    grid-column:2/5;
+    place-self: center start;
+    
+}
+
+.cardTop p{
+    font-size: 2em;
+    place-self: center;
+    grid-column:6;
+
+}
+.cardContent{
+    grid-area: cont;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.feed{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 20px 50px ;
+}
+
+.comentarios{
+    justify-content: flex-start;
+    padding: 5px 50px ;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+.icono{
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+.gris{
+    color:#A49B9B;
+    font-size: 1rem;
+}
+.comentarios span{
+    font-weight: bold;
+}
+
+/*aside*/
+aside{
+    grid-area: aside;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "as as as as"
+        ". . . ."
+        ". . . ."
+        ". . . .";
+    font-family: 'Inter', sans-serif;
+    margin: 10vh 0 15% 0 ;
+}
+.division{
+    grid-area: as;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr;
+    grid-template-areas: 
+        "abF abN abC"
+        "sug sug ."
+        "pr1F pr1N pr1S"
+        "pr2F pr2N pr2S";
+    align-items: center;
+}
+#abF{
+    grid-area:abF;
+}
+#abN {
+    grid-area:abN;
+}
+#abN span{
+    color: #808080;
+}
+h6{
+    grid-area: sug;
+    color: #808080;
+    font-size: 1.3rem;
+    margin-top: 50px;
+}
+#pr1F{
+    grid-area: pr1F;
+}
+#pr1N{
+    grid-area: pr1N;
+}
+#pr1S{
+    grid-area: pr1S;
+}
+#pr2F{
+    grid-area: pr2F;
+}
+#pr2N{
+    grid-area: pr2N;
+}
+#pr2S{
+    grid-area: pr2S;
+}
+#pr1F,#pr2F {
+    width: 50px;
+    height: 50px;
+}
+
+.division a{
+    color:rgba(0, 0, 255, 0.452);
+}
+
+.division a:hover{
+    color:blue;
+}
+
+/*footer*/
+footer{
+    grid-area:footer;
+    place-self: stretch;
+    text-align: center;
+    padding: 20px;
+    background-color: #222222;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
